@@ -136,45 +136,118 @@ iframe {
 /* DOWNLOADS */
 #scroll-2 {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 120px 50px;
+    min-height: 80vh; /* ne zauzima cijeli ekran, prirodan prostor */
+    padding: 80px 40px; /* prostor oko boxova */
     background-image: url('map/castle_dimitrescu/hall.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.7);
-    transition: background 1s ease-in-out; /* fade efekt background-a */
+    background-attachment: fixed; /* fiksna pozadina daje parallax efekt */
+    display: flex;
+    align-items: center; /* vertikalno centrira container */
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-/* Lagano prozirni download boxovi sa blur-om */
+/* Crni fade sa vrha scroll-2 */
+#scroll-2::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 200px; /* fade sa vrha */
+    background: linear-gradient(to bottom, #0d0d0d 0%, rgba(13,13,13,0) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Container za download boxove */
+.download-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative; /* iznad fade-a */
+    z-index: 1;
+    max-width: 1200px; /* ograničava širinu da ne bude preširoko */
+    margin: 0 auto; /* centriranje */
+}
+
+/* Download boxovi */
 .download {
-    background: rgba(0, 0, 0, 0.4); /* prozirno, manje tamno nego prije */
-    padding: 40px;
-    border: 1px solid #c6a96a;
-    border-radius: 10px;
+    background: rgba(0,0,0,0.35); /* lagano transparentno */
+    padding: 35px 30px;
+    border-radius: 12px;
     max-width: 300px;
     text-align: center;
-    backdrop-filter: blur(10px); /* jači blur za efekat stakla */
-    transition: transform 0.3s ease, backdrop-filter 0.3s ease, background 0.3s ease;
+    backdrop-filter: blur(12px); /* glass efekt */
+    border: 1px solid #c6a96a;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .download:hover {
     transform: scale(1.05);
+    background: rgba(0,0,0,0.45); /* malo tamniji hover efekt */
+}
+
+.download h3 {
+    color: #e0c789;
+    margin-bottom: 10px;
+}
+
+.download p {
+    color: #f5e8c7;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Responsivnost: manji ekrani */
+@media (max-width: 900px) {
+    .download-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+#scroll-2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* fade na dnu */
+    background: linear-gradient(to bottom, rgba(13,13,13,0) 0%, #0d0d0d 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 
 /* DEVELOPERS */
 #scroll-3 {
-    background: url('factory.jpg') no-repeat center center/cover;
-    background-attachment: fixed;
+    position: relative;
+    background-color: #0d0d0d; /* crna pozadina */
     padding: 120px 60px;
     text-align: center;
-    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
 }
 
+#scroll-3::before {
+    content: "";
+    position: absolute;
+    top: -300px; /* start fade iz prethodne sekcije */
+    left: 0;
+    width: 100%;
+    height: 300px; /* visina fade-a */
+    background: linear-gradient(to bottom, rgba(13,13,13,0) 0%, #0d0d0d 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+/* Tekst ostaje iznad fade-a */
+#scroll-3 h2,
+#scroll-3 p {
+    position: relative;
+    z-index: 1;
+}
 #scroll-3 h2 {
     color: #c6a96a;
     font-size: 34px;
@@ -185,6 +258,7 @@ iframe {
     max-width: 800px;
     margin: 20px auto;
 }
+
 
 /* FOOTER */
 #footer {

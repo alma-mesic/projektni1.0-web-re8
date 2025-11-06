@@ -13,11 +13,5 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollY;
-    const scroll2 = document.getElementById('scroll-2');
+const overlay = document.querySelector('#scroll-2 .bg-overlay');
 
-    if (scrollPos > 800) { // primjer vrijednosti kad ulaziš u downloads
-        scroll2.style.backgroundImage = "url('castle.jpg')";
-    } 
-});
