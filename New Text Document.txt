@@ -1,0 +1,9 @@
+1. front page - opis, scroll - informacije, koliko je skidano, neke statisktike, development tim
+logo naziv 		home	updates	    explore online	characters	map			download
+
+explore online ce bit da mora sign up ili log in
+
+8 stranica total
+
+-----------------------
+mozda unutar map- napraviti galeriju s ostatkom slika

@@ -1,0 +1,9 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../j.jpg");
+    background-size: cover;      /* slika se razvuče preko cijele stranice */
+    background-position: center; /* centrirana slika */
+    background-repeat: no-repeat;/* bez ponavljanja */
+    height: 85vh; 
+}
