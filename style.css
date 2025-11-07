@@ -136,14 +136,14 @@ iframe {
 /* DOWNLOADS */
 #scroll-2 {
     position: relative;
-    min-height: 80vh; /* ne zauzima cijeli ekran, prirodan prostor */
-    padding: 80px 40px; /* prostor oko boxova */
+    min-height: 80vh; 
+    padding: 80px 40px; 
     background-image: url('map/castle_dimitrescu/hall.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* fiksna pozadina daje parallax efekt */
+    background-attachment: fixed; 
     display: flex;
-    align-items: center; /* vertikalno centrira container */
+    align-items: center; 
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
@@ -169,25 +169,28 @@ iframe {
     flex-wrap: wrap;
     position: relative; /* iznad fade-a */
     z-index: 1;
-    max-width: 1200px; /* ograničava širinu da ne bude preširoko */
-    margin: 0 auto; /* centriranje */
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 /* Download boxovi */
 .download {
-    background: rgba(0,0,0,0.35); /* lagano transparentno */
+    background: rgba(0,0,0,0.35); 
     padding: 35px 30px;
     border-radius: 12px;
     max-width: 300px;
     text-align: center;
-    backdrop-filter: blur(12px); /* glass efekt */
+    backdrop-filter: blur(12px); 
     border: 1px solid #c6a96a;
     transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+	transition: 0.3s;
 }
 
 .download:hover {
     transform: scale(1.05);
-    background: rgba(0,0,0,0.45); /* malo tamniji hover efekt */
+    box-shadow: 0 0 15px rgba(198, 169, 106, 0.5);
+    background: rgba(0,0,0,0.45); 
 }
 
 .download h3 {
