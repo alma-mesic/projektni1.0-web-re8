@@ -22,24 +22,52 @@
     <!-- FRONT PAGE -->
     <div id="front-page">
         <!-- Animirani naslov i opis -->
-        <div id="updates-title" class="front-text">
+        <div id="updates-title">
             <h1>Game Updates</h1>
             <p>Latest news and patches from Resident Evil Village</p>
         </div>
 
-        <!-- Boxovi koji se pojavljuju nakon fade out naslova -->
+        <!-- Boxovi -->
         <div id="updates-container" class="hidden">
             <div class="update-box">
-                <h3>Patch 1.05</h3>
-                <p>New difficulty settings, bug fixes, and performance improvements for smoother gameplay.</p>
+                <img src="bugs.jpg" alt="bugs">
+                <h3>Bugs Fixed</h3>
+                <p class="short-text">
+                    New difficulty settings, bug fixes, and performance improvements for smoother gameplay.
+                </p>
+                <ul class="update-details">
+                    <li>Resolved character and enemy collision issues.</li>
+                    <li>Fixed rare game crashes in certain areas.</li>
+                    <li>Improved scene loading performance, faster loading times, and smoother FPS.</li>
+                </ul>
+                <button class="learn-more">Learn More</button>
             </div>
+
             <div class="update-box">
-                <h3>Patch 1.04</h3>
-                <p>Enhanced graphics options, new enemy behaviors, and visual fixes across all platforms.</p>
+                <img src="rose.jpg" alt="rose">
+                <h3>Shadows of Rose DLC</h3>
+                <p class="short-text">
+                    Explore new story content and additional missions in the Shadows of Rose DLC.
+                </p>
+                <ul class="update-details">
+                    <li>New storyline featuring Rose, with exclusive locations and missions.</li>
+                    <li>New gameplay elements and puzzles that test player strategy.</li>
+                    <li>Enhanced enemy AI in DLC segments for a more challenging experience.</li>
+                </ul>
+                <button class="learn-more">Learn More</button>
             </div>
+
             <div class="update-box">
-                <h3>Patch 1.03</h3>
-                <p>Fixed startup crashes, optimized loading times, and minor gameplay adjustments.</p>
+                <img src="enemies.jpg" alt="enemy">
+                <h3>New Enemies Added</h3>
+                <p class="short-text">
+                    Enhanced graphics, new enemy behaviors, and visual fixes across all platforms.
+                </p>
+                <ul class="update-details">
+                    <li>Completely new enemies with unique attacks and behaviors.</li>
+                    <li>Improved visual effects and animations for all new enemies.</li>
+                </ul>
+                <button class="learn-more">Learn More</button>
             </div>
         </div>
     </div>
@@ -51,26 +79,40 @@
     </div>
 
     <script>
+        // Fade-out naslov i fade-in boxovi
         window.addEventListener("DOMContentLoaded", () => {
-        const title = document.getElementById("updates-title");
-        const container = document.getElementById("updates-container");
+            const title = document.getElementById("updates-title");
+            const container = document.getElementById("updates-container");
 
-        // FadeOut nakon 3s delay + trajanje fadeOut 3s
-        setTimeout(() => {
-            title.style.animation = "fadeOutTitle 3s ease forwards";
+            setTimeout(() => {
+                const h1 = title.querySelector('h1');
+                const p = title.querySelector('p');
 
-            title.addEventListener("animationend", () => {
-                title.style.display = "none"; // ukloni naslov
-                container.classList.remove("hidden"); // prikaži boxove
+                h1.style.animation = "fadeOutTitle 2s forwards";
+                p.style.animation = "fadeOutTitle 2s forwards";
 
-                const boxes = container.querySelectorAll(".update-box");
-                boxes.forEach((box, index) => {
-                    box.style.animation = `fadeInBox 1.5s ease forwards`;
-                    box.style.animationDelay = `${index * 0.5}s`; // stagger efekt
+                p.addEventListener("animationend", () => {
+                    title.style.display = "none";
+                    container.classList.remove("hidden");
+                    container.style.opacity = 1;
+
+                    const boxes = container.querySelectorAll(".update-box");
+                    boxes.forEach((box, index) => {
+                        box.style.animation = `fadeInBox 1.2s forwards`;
+                        box.style.animationDelay = `${index * 0.5}s`;
+                    });
+                }, { once: true });
+            }, 3000);
+
+            // Learn More dugme
+            document.querySelectorAll(".learn-more").forEach(button => {
+                button.addEventListener("click", () => {
+                    const box = button.closest(".update-box");
+                    const ul = box.querySelector(".update-details");
+                    ul.classList.toggle("show");
                 });
-            }, { once: true });
-        }, 3000); // čekaj 3s prije fadeOut
-    })
+            });
+        });
     </script>
 </body>
 </html>
