@@ -263,23 +263,17 @@ iframe {
 }
 
 
-/* FOOTER */
+/* ======== FOOTER ======== */
 #footer {
     background: rgba(0, 0, 0, 0.9);
     text-align: center;
-    padding: 40px 20px;
+    padding: 20px 20px;
     border-top: 1px solid #c6a96a;
+    flex-shrink: 0;
 }
 
-#footer img {
-    height: 60px;
-    margin-bottom: 10px;
-}
-
-#footer p {
-    color: #aaa;
-    font-size: 12px;
-}
+#footer img { height: 40px; margin-bottom: 10px; }
+#footer p { color: #aaa; font-size: 12px; }
 
 /* ANIMACIJA */
 @keyframes fadeIn {
