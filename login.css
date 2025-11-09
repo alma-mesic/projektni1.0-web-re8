@@ -129,8 +129,48 @@ body {
 
 #login-form .register-text a:hover { color: #e0d6b0; }
 
-/* ======== RESPONSIVE ======== */
-@media (max-width: 900px) {
-    #login-form { width: 90%; padding: 30px 20px; }
-    #login-form h2 { font-size: 1.8em; }
+@media (max-width: 700px) {
+    #header {
+        padding: 5px 7px;   
+        gap: 7px;           
+    }
+
+    #header img {
+        height: 25px;         
+        margin-right: 7px;
+    }
+
+    #header a {
+        font-size: 10px;     
+        letter-spacing: 0.8px;
+    }
+    #login-page {
+        margin-top: 60px; 
+        padding: 0 10px;
+    }
+
+    #login-form {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    #login-form h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    #login-form input {
+        font-size: 0.9em;
+        padding: 10px 12px;
+    }
+
+    #login-form button {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    #login-form .register-text {
+        font-size: 0.8em;
+    }
+    
 }
