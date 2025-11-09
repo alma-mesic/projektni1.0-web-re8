@@ -13,27 +13,39 @@ body {
 
 /*  HEADER  */
 #header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  padding: 12px 0;
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(5px);
-  position: fixed;
-  top: 0;
-  z-index: 10;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.25); /* providan efekat */
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    transition: background 0.3s ease;
+    transition: top 0.3s ease;
 }
-#header img { height: 64px; }
+
+#header img {
+    height: 50px;
+    margin-right: 30px;
+}
+
 #header a {
-  color: #e0d6b0;
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 1px;
-  transition: 0.3s;
+    color: #e0d6b0;;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
-#header a:hover { color: #c7a97b; text-shadow: 0 0 10px #c6a96a; }
+
+#header a:hover {
+    color: #c7a97b;
+    text-shadow: 0 0 10px #c6a96a;
+}
+
 
 #register-page {
   flex: 1;
