@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resident Evil Village - Register</title>
-    <link rel="icon" type="image/x-icon" href="paradise.png">
+    <link rel="icon" type="image/x-icon" href="a.png">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="register.css">
 </head>
@@ -15,7 +15,7 @@
     <a href="index.html">Home</a>
     <a href="updates.html">Updates</a>
     <a href="explore.html">Explore Online</a>
-    <a href="characters.html">Characters & Map</a>
+    <a href="characters.html">Map</a>
     <a href="download.html">Download</a>
   </div>
 
@@ -24,22 +24,21 @@
     <form id="register-form">
         <h2>Create Account</h2>
         <label class="upload-label" for="avatar-input">Upload Image</label>
-        <input id="avatar-input" type="file" accept="image/*">
+        <input id="avatar-input" type="file">
         <div class="form-fields">
-        <input class="input-username" type="text" name="username" placeholder="Username" required>
-        <input class="input-email" type="email" name="email" placeholder="Email" required>
-        <input class="input-password" type="password" name="password" placeholder="Password" required>
-        <input class="input-confirm" type="password" name="confirm_password" placeholder="Confirm Password" required>
-        <input class="input-dob" type="date" name="dob" placeholder="Date of Birth" required>
-        <input class="input-card" type="text" name="card" inputmode="numeric" placeholder="Card Number (optional)">
-
-        <div class="form-buttons">
-            <button type="submit">Submit</button>
-            <button type="reset" id="formReset">Reset</button>
-        </div>
-        <p class="login-text">Already have an account? <a href="login.html">Login here</a></p>
+          <input class="input-username" type="text" name="username" placeholder="Username" required>
+          <input class="input-email" type="email" name="email" placeholder="Email" required>
+          <input class="input-password" type="password" name="password" placeholder="Password" required>
+          <input class="input-confirm" type="password" name="confirm_password" placeholder="Confirm Password" required>
+          <input class="input-dob" type="date" name="dob" placeholder="Date of Birth" required>
+          <input class="input-card" type="text" name="card" inputmode="numeric" placeholder="Card Number (optional)">
+          <div class="form-buttons">
+              <button type="submit">Submit</button>
+              <button type="reset" id="formReset">Reset</button>
+          </div>
+          <p class="login-text">Already have an account? <a href="login.html">Login here</a></p>
         </div>
     </form>
-    </div>
-    </body>
+  </div>
+</body>
 </html>
